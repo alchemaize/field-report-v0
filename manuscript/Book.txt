@@ -1,0 +1,12 @@
+00-cover.md
+01-about.md
+02-part-01-manifesto.md
+03-part-02-how-cid-works.md
+04-part-03-case-study.md
+05-part-04-worked-vos.md
+06-part-05-chapter-1-teaser.md
+07-part-06-chapter-8-excerpts.md
+08-part-07-anticipated-questions.md
+09-part-08-not-and-next.md
+10-part-09-authors.md
+11-colophon.md
