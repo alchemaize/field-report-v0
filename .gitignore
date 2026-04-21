@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build intermediates
+*.aux
+*.log
+*.out
+*.toc
+*.tmp
+
+# Do NOT ignore dist/*.pdf — the compiled PDF is intentionally committed
+# so readers can download it without running the toolchain.
