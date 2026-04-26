@@ -59,8 +59,8 @@ and check every paragraph: would they actually say this? If not, rewrite.
 Speakers for this project:
 - David Kim: co-founder/CPO Alchemaize, Brentwood TN, prior author of
   two books in adjacent domains, direct.
-- Casey Robinson: six-four, bearded, AWS Senior Manager background,
-  consulting/ops/Agile, no prior coding, Claremore OK.
+- Casey Robinson: six-two, big frame, sports enthusiast, AWS Senior Manager
+  background, consulting/customer service/ops/Agile, no prior coding, Claremore OK.
 - Glenn Knepp: CEO/CTO, career engineer, College Station TX,
   Verification Owner. Dry, precise.
 

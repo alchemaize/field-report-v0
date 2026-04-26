@@ -10,7 +10,7 @@ This section is the evidence. It documents what we counted, what we didn't, whic
 
 ## Who we are and what we had
 
-Alchemaize was founded in August 2025 by David Kim (CEO shifting to CPO after the pivot) and Glenn Knepp (CEO/CTO after the pivot) for the purpose of building Ember, an AI-augmented reading application that shipped an MVP in December 2025. Casey Robinson joined as COO in October 2025, hired to run operations ahead of a Series A push.
+Alchemaize was founded in August 2025 by David Kim and Glenn Knepp for the purpose of building Ember, an AI-augmented reading application that shipped an MVP in December 2025. David and Glenn have known each other since 1996, having served together in the United States Marine Corps. Casey Robinson joined as COO in October 2025, hired to run operations ahead of a Series A push.
 
 Through the fall of 2025, David and Glenn's own development work was speeding up in ways neither had seen before. They were using Cursor and Kiro in the generation step, writing specifications with more precision than they were used to, and verifying output with small test harnesses they'd built along the way. By the end of December they had stopped calling what they were doing "using AI coding tools" and started calling it, roughly and informally, "the thing we are doing now."
 
