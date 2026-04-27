@@ -12,7 +12,7 @@ AI code generation has compressed the typing step by one to two orders of magnit
 
 The consequence is harder to sit with than the observation. Every framework currently in use at your company was built for a bottleneck that is no longer where the framework assumes. The coordination machinery that was reasonable when typing was the long pole has become friction. That is not an insult to the frameworks. They answered the question they were asked. Someone else started asking a different one.
 
-This report names what replaces them. The methodology is Continuous Intent Delivery, CID for short. Humans specify. Humans verify. The machine writes the code. A small role-structured team runs a five-stage loop over a unit of work called a Verifiable Outcome Slice. Scaling the loop is a separate problem with a separate answer, and that answer is most of the book.
+This report names what replaces them. The methodology is Continuous Intent Delivery, CID for short. Humans specify. Humans verify. The machine writes the code. A small role-structured team runs a four-stage pipeline plus a parallel watching layer over a unit of work called a Verifiable Outcome Slice. Scaling the pipeline is a separate problem with a separate answer, and that answer is most of the book.
 
 The argument is in the pages in your hands. The evidence starts on the next one.
 

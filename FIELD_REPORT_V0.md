@@ -1,13 +1,13 @@
 ---
-title: "Field Report from the First Hundred Days"
+title: "Field Report from the Hundred Days"
 subtitle: "What happened when three founders stopped building software the old way"
 author: "David Kim, Casey Robinson, Glenn Knepp"
-date: "April 2026, v0.1 draft"
+date: "April 29, 2026, v0.1 draft"
 ---
 
 \newpage
 
-# Field Report from the First Hundred Days
+# Field Report from the Hundred Days
 
 **What happened when three founders stopped building software the old way.**
 
@@ -15,13 +15,13 @@ David Kim, Casey Robinson, Glenn Knepp
 
 Alchemaize
 
-v0.1, April 2026 draft. Pre-release. Do not cite as final.
+v0.1, April 29, 2026 draft. Pre-release. Do not cite as final.
 
 \newpage
 
 ## About this document
 
-*Field Report from the First Hundred Days* is a free, roughly sixty-page artifact released ahead of our full-length methodology book, *Continuous Intent Delivery*, currently in publisher discussions. It exists because the methodology is moving faster than the publishing industry, and we didn't want to wait eighteen months to start the conversation.
+*Field Report from the Hundred Days* is a free, roughly sixty-page artifact released ahead of our full-length methodology book, *Continuous Intent Delivery*, currently in publisher discussions. It exists because the methodology is moving faster than the publishing industry, and we didn't want to wait eighteen months to start the conversation.
 
 What's in it.
 
@@ -37,10 +37,10 @@ What's held back. The enterprise layer, the compliance framework, the full adopt
 
 The report is pay-what-you-like on Leanpub (minimum zero), mirrored on GitHub under CC BY-NC-SA, and linkable from `alchemaize.ai/field-report`. Typos and factual corrections via pull request. Structural feedback goes to the GitHub issue tracker, or directly to the three of us.
 
-We founded Alchemaize in August 2025 to build Ember, an AI-augmented reading application. David is in Brentwood, Tennessee. Casey in Claremore, Oklahoma. Glenn in College Station, Texas. We've never shared an office. We don't plan to.
+We founded Alchemaize in August 2025. David is in Brentwood, Tennessee. Casey in Claremore, Oklahoma. Glenn in College Station, Texas. We've never shared an office. We don't plan to.
 
 DK, CR, GK
-April 2026
+April 29, 2026
 
 \newpage
 
@@ -58,7 +58,7 @@ AI code generation has compressed the typing step by one to two orders of magnit
 
 The consequence is harder to sit with than the observation. Every framework currently in use at your company was built for a bottleneck that is no longer where the framework assumes. The coordination machinery that was reasonable when typing was the long pole has become friction. That is not an insult to the frameworks. They answered the question they were asked. Someone else started asking a different one.
 
-This report names what replaces them. The methodology is Continuous Intent Delivery, CID for short. Humans specify. Humans verify. The machine writes the code. A small role-structured team runs a five-stage loop over a unit of work called a Verifiable Outcome Slice. Scaling the loop is a separate problem with a separate answer, and that answer is most of the book.
+This report names what replaces them. The methodology is Continuous Intent Delivery, CID for short. Humans specify. Humans verify. The machine writes the code. A small role-structured team runs a four-stage pipeline plus a parallel watching layer over a unit of work called a Verifiable Outcome Slice. Scaling the pipeline is a separate problem with a separate answer, and that answer is most of the book.
 
 The argument is in the pages in your hands. The evidence starts on the next one.
 
@@ -70,13 +70,13 @@ DK
 
 ## What this part is for
 
-The rest of Part II describes CID in enough depth that you can argue with it. It introduces the three roles, the five-stage loop, the unit of work, and the four metrics that replace the velocity dashboard. It doesn't give you enough to run the methodology inside an organization. That's in the book.
+The rest of Part II describes CID in enough depth that you can argue with it. It introduces the three roles, the four-stage pipeline plus parallel watching layer, the unit of work, and the four metrics that replace the velocity dashboard. It doesn't give you enough to run the methodology inside an organization. That's in the book.
 
 The asymmetry is deliberate. An argument has to be made in public. The practice of running a method has to be taught carefully. This report does the first. The book does the second.
 
-## The five-stage loop
+## The four-stage pipeline and the watching layer
 
-CID is a loop, not a sprint. There's no fixed cadence. It runs at the pace verification allows.
+CID is a pipeline, not a sprint. There's no fixed cadence. It runs at the pace verification allows. The pipeline is per-VOS, forward flow, with two reverse edges for fast correction. Observation runs as a parallel watching layer alongside, against the deployed inventory, and seeds new intents at the head of the stream.
 
 **1. Intent.** A human, the Intent Engineer, writes a specification of what should be built. The specification is a VOS, a Verifiable Outcome Slice, and it's the unit of work in the methodology. A VOS has five sections: WHY, WHAT, HOW, CONTEXT, OUTCOME. We describe them below.
 
@@ -86,9 +86,9 @@ CID is a loop, not a sprint. There's no fixed cadence. It runs at the pace verif
 
 **4. Verification.** The Verification Owner runs the acceptance contract from the VOS against the generated code. The contract is executable. It either passes or it doesn't. If it doesn't, the slice goes back to the Intent Engineer with notes. The Verification Owner doesn't report to the delivery chain. Their job is to say no.
 
-**5. Observation.** The slice ships. Production telemetry confirms, or fails to confirm, that the outcome described in the VOS was actually produced for real users. Observation loops back into intent, closing the slice or opening a new one.
+**5. Observation.** The slice ships. Production telemetry confirms, or fails to confirm, that the outcome described in the VOS was actually produced for real users. Observation watches the slice in production from the parallel watching layer. The shipped slice is terminal. When observation surfaces actionable signal, it seeds a fresh VOS at the head of the pipeline.
 
-The loop is continuous. It doesn't run once per sprint. It runs as fast as the verification step can be honored, typically several slices per day per Intent Engineer once the pod has matured.
+The pipeline is continuous. It doesn't run once per sprint. It runs as fast as the verification step can be honored, typically several slices per day per Intent Engineer once the pod has matured.
 
 ## The three roles
 
@@ -116,7 +116,7 @@ The VOS is the unit of work. It replaces the story, the ticket, the feature, the
 
 **OUTCOME.** The production signal. One sentence describing what will be observable in telemetry or user behavior if the slice succeeds. Observation watches for this.
 
-We include one full worked VOS (the cash-flow reconciliation slice Casey shipped on Finaize) in Part IV. The book has ten more and an appendix of templates.
+We include one full worked VOS (the deal-jacket assembly slice Casey shipped on Finaize) in Part IV. The book has ten more and an appendix of templates.
 
 ## The four metrics
 
@@ -138,21 +138,19 @@ No velocity. No burndown. No story points. Four numbers, reviewed once a month f
 
 ## One hundred days, thirty-five applications
 
-Between January 6 and April 15, 2026, three founders of Alchemaize shipped thirty-five production applications using the methodology described above. Two FTE, roughly.
-
-We hadn't named the methodology when we started. We named it after we'd watched it work enough times to trust it. The naming came in late March, after the case study was substantially complete. The methodology itself had emerged in real time in our own work starting in the fall of 2025.
+Between January 18 and April 20, 2026, three founders of Alchemaize shipped thirty-five production applications using the methodology described above. Two FTE, roughly. That hundred days is the case study. It is also the second hundred days of Alchemaize, not the first, and the first hundred days are why the second ones happened.
 
 This section is the evidence. It documents what we counted, what we didn't, which projects we killed, and the measurement methodology. We're doing it in public because an extraordinary claim without a counting methodology is a sales pitch, and we'd rather be boring than wrong.
 
 ## Who we are and what we had
 
-Alchemaize was founded in August 2025 by David Kim and Glenn Knepp for the purpose of building Ember, an AI-augmented reading application that shipped an MVP in December 2025. David and Glenn have known each other since 1996, having served together in the United States Marine Corps. Casey Robinson joined as COO in October 2025, hired to run operations ahead of a Series A push.
+Alchemaize was founded in August 2025 by David Kim and Glenn Knepp for the purpose of building Ember, an AI-augmented reading application. Casey Robinson joined as COO on October 1, 2025, hired to run operations ahead of a Series A push. By October 20 we had a four-person development team in place, three developers and an AWS solutions architect, all part-time, all comped on options and deferred contingent compensation tied to seed and Series A milestones, all holding full-time jobs at FAANG companies.
 
-Through the fall of 2025, David and Glenn's own development work was speeding up in ways neither had seen before. They were using Cursor and Kiro in the generation step, writing specifications with more precision than they were used to, and verifying output with small test harnesses they'd built along the way. By the end of December they had stopped calling what they were doing "using AI coding tools" and started calling it, roughly and informally, "the thing we are doing now."
+Through the fall of 2025 we built Ember the old way. Standups, sprints, retros, sprint reviews, planning. Cursor and Kiro layered on top of that methodology rather than redesigning it. The Ember web-app MVP shipped on December 1, 2025. The user-acquisition story did not follow. The product worked beautifully on Project Gutenberg titles, and the audience the user-acquisition story depended on wanted commercial fiction (Harry Potter, Fourth Wing, the books actually being read), and DRM made that catalog inaccessible to us without a Kindle integration we had not yet been able to start a conversation about. By the end of December the development team was wound down. The first hundred days of Alchemaize, October 1, 2025 through January 9, 2026, ended with a finished MVP that could not yet sell at the scale we needed and a clear answer that the methodology we had been operating under was not going to make the company's future.
 
-In the first week of January, they called Casey in and asked him to try running a slice end-to-end himself. He was a non-engineer. If the thing they were calling "the thing we are doing now" could be run by Casey, then it was a methodology. If not, it was a productivity hack.
+In the second week of January, the three of us concluded that we had to fundamentally change how Alchemaize worked. We named the new approach Continuous Intent Delivery. On January 18, 2026, we drew a line in the sand. The pod was the three founders. No development team, no architect. Three people, three states, three home offices.
 
-He did. The next hundred days is what we're reporting on.
+Ten days later, on January 28, 2026, at four in the morning Central time, Amazon issued a company-wide reduction in force. Sixteen thousand Amazonians received notification of position elimination, with a 90-day notification period. David's entire team of fourteen, including Casey, who led a sub-team within David's broader org, and including David, was hit. The methodology we had agreed to test ten days earlier became, in the space of one morning, the only work either of them had in front of them. The next hundred days is what we're reporting on.
 
 During the hundred days, the founding team was:
 
@@ -183,7 +181,7 @@ We did not count:
 The 35 break down as follows:
 
 - **12** in the Alchemaize portfolio (consumer and small-business applications): Ember, Drawer, Flipmode, Noshmode, Radient, Renew, Skipday, Starfish, TradeCodex, VisibleWealth, Yeon, and the Alchemaize marketing site.
-- **11** in the Finaize suite, the cash-flow product Casey spent most of the hundred days on. Finaize ships as a suite: the web app, the mobile companion, the reconciliation engine, the bank-line ingestion service, the reporting service, several internal admin tools, and a small set of customer-facing microsites.
+- **11** in the Finaize suite, the modernized Auto F&I product Casey spent most of the hundred days on. Finaize ships as a suite: the web app, the mobile companion, the deal-structuring engine, the lender integration service, the reporting service, several internal admin tools, and a small set of customer-facing microsites.
 - **6** in the Catalyst partnership surface, the AWS-aligned consulting engagement artifacts: the assessment intake, the ROI calculator, the deal-desk automation, the customer-onboarding flow, and two partner-integration applications.
 - **4** in the BoxLens / Albo / Ember-extension surface: small companion applications and experiments.
 - **2** we're declining to name because they're under NDA with external pilot customers.
@@ -226,71 +224,71 @@ The book's Chapter 3, The Evidence, expands this section into about 10,000 words
 
 # Part IV. One Worked VOS
 
-## The cash-flow reconciliation slice
+## The deal-jacket assembly slice
 
-To show what a VOS actually looks like, we reproduce one here in abbreviated form. It's a VOS Casey wrote in late February, against the Finaize application, for a feature called Cash Flow Projection Bank-Line Reconciliation.
+To show what a VOS actually looks like, we reproduce one here in abbreviated form. It's a VOS Casey wrote in late February, against the Finaize application, for a feature called Deal Jacket Document Assembly.
 
 The WHY and WHAT are reproduced in full. The HOW, CONTEXT, and OUTCOME are summarized. The full VOS, including the thirty-line Gherkin acceptance contract, is in Appendix B of the book.
 
 ---
 
-**VOS-FNZ-087. Cash Flow Projection Bank-Line Reconciliation.**
+**VOS-FNZ-087. Deal Jacket Document Assembly.**
 
 *Intent Engineer: Casey Robinson. Verification Owner: Glenn Knepp. AI Orchestrator: David Kim. Authored 2026-02-24. Shipped 2026-02-27.*
 
 ### WHY
 
-A small-business owner relies on this application to tell them whether they'll have money for payroll on the fifteenth. If the categorized view of the month disagrees with the bank-line total, even by a cent, the owner is being told something false, and we've failed the most basic job the product has. This slice ensures we either show a reconciled projection or refuse to show a projection at all.
+A dealership F&I manager relies on this application to assemble the complete set of documents for a closed deal. If the jacket is missing a required disclosure for the customer's state of purchase, the dealership is exposed to compliance risk and the customer has not been properly informed. This slice ensures we either produce a complete jacket or refuse to mark the deal as closed.
 
 ### WHAT
 
 The acceptance contract is written in Gherkin. A condensed version:
 
 ```gherkin
-Feature: Cash-flow projection must reconcile with bank-line totals
+Feature: Deal jacket must include all required disclosures for state of purchase
 
-  Scenario: Reconciled month displays projection
-    Given a categorized month with transactions totaling $X
-    And a bank-line total of exactly $X for the same month
-    When the projection is requested
-    Then the projection is displayed
-    And the reconciliation badge shows "Reconciled"
+  Scenario: Complete jacket marks deal as closeable
+    Given a completed F&I transaction in state S
+    And all required disclosure documents for state S are present
+    When the jacket is assembled
+    Then the jacket is marked "Complete"
+    And the deal status allows closing
 
-  Scenario: Unreconciled month shows error, not projection
-    Given a categorized month with transactions totaling $X
-    And a bank-line total of any value not equal to $X for the same month
-    When the projection is requested
-    Then the projection is NOT displayed
-    And the error banner displays "Some transactions could not be reconciled"
-    And the banner offers a link to "Review uncategorized transactions"
+  Scenario: Incomplete jacket blocks closing
+    Given a completed F&I transaction in state S
+    And one or more required disclosure documents for state S are missing
+    When the jacket is assembled
+    Then the jacket is NOT marked "Complete"
+    And the error banner displays "Missing required disclosures"
+    And the banner lists each missing document by name
 
-  Scenario: Reconciliation is accurate to the cent
-    Given any categorized month
-    When the reconciliation check runs
-    Then the check passes only if categorized total equals bank-line total
-      exactly, with no tolerance
+  Scenario: Disclosure requirements are state-specific
+    Given any completed F&I transaction
+    When the jacket assembly runs
+    Then the required-document check uses the disclosure rules
+      for the customer's state of purchase, not a generic list
 ```
 
 ### HOW (summarized)
 
-Use the existing transaction-categorization pipeline. Add a reconciliation step at the pipeline's tail. Surface the error state through the existing error-banner component. No new UI components.
+Use the existing deal-structuring pipeline. Add a disclosure-check step at the pipeline's tail. Surface the error state through the existing error-banner component. No new UI components.
 
 ### CONTEXT (summarized)
 
 Four files:
 
-- `lib/finaize/categorize.ts`, the transaction categorization module.
-- `components/finaize/ProjectionDisplay.tsx`, the projection display component.
+- `lib/finaize/deal-structuring.ts`, the deal-structuring module.
+- `components/finaize/JacketDisplay.tsx`, the jacket display component.
 - `components/ui/ErrorBanner.tsx`, the error-banner component.
-- `lib/finaize/aggregate.ts`, the monthly aggregation utility.
+- `lib/finaize/state-disclosure-rules.ts`, the state-specific disclosure rules utility.
 
 ### OUTCOME (summarized)
 
-Reconciliation-failure rate visible to users drops to zero over the next billing cycle, because any projection we can't reconcile, we don't show. Support-ticket volume for reconciliation-related issues drops by at least 80 percent week over week.
+Incomplete-jacket rate visible to F&I managers drops to zero over the next billing cycle, because any jacket we can't verify as complete, we don't mark closeable. Compliance-related escalations drop by at least 80 percent week over week.
 
 ### What happened
 
-The system generated the code in about six minutes. The pull request passed all unit tests on the first run, and passed the acceptance contract on the first run. Glenn signed the contract. The slice deployed to production on Thursday, February 27, around 3pm Central. On Friday the 28th, the support team reported zero new reconciliation-related tickets for the first time in a rolling seven-day window. The OUTCOME prediction held.
+The system generated the code in about six minutes. The pull request passed all unit tests on the first run, and passed the acceptance contract on the first run. Glenn signed the contract. The slice deployed to production on Thursday, February 27, around 3pm Central. On Friday the 28th, the ops team reported zero new incomplete-jacket escalations for the first time in a rolling seven-day window. The OUTCOME prediction held.
 
 Casey's description of writing this VOS, and of realizing that the skill required was one he'd been practicing for twenty years in other jobs, is in Section 3 of the Chapter 8 excerpt in Part VI.
 
@@ -304,83 +302,79 @@ Casey's description of writing this VOS, and of realizing that the skill require
 
 ## The Shift
 
-In February of 2026, in a converted den on the ground floor of a house in Claremore, Oklahoma, Casey deployed his forty-second Verifiable Outcome Slice of the quarter. He was two states away from Glenn, five hundred miles from me, and not in a shared building with either of us. He had been at his desk for about five hours. The house was quiet. The code that shipped, across three files in an application called Finaize, was going to serve real users the following morning.
+Casey shipped his forty-second VOS of the quarter late on a Tuesday in February. He was working from his desk in a converted den in Claremore, Oklahoma, three states from either of his co-founders, neither of whom Alchemaize has ever asked him to share a room with. Close to midnight. The house was quiet. He typed a two-word commit message, pressed return, stood up, stretched, and noticed the coffee on his desk had gone cold at some point he didn't remember.
 
-Casey is the third author of this book. He wasn't a software engineer, in any sense the industry would have recognized in 2025. His career is customer service, operations, consulting, and Agile program management, carried over two decades. Immediately before Alchemaize he spent a year at Amazon Web Services at the Senior Manager level, leading a team of Customer Solutions Managers, the people who guide enterprise customers through cloud migrations. He had never written a line of production code in his working life. He was hired as COO in October 2025 to help us get ready for a Series A raise, anticipated on the back of our reading application, Ember, launching its MVP. He wasn't hired to ship software. Nobody expected him to.
+Walking down the hall to the kitchen, he realized a few things in no particular order. He hadn't been to a standup in three weeks. Nobody on the founding team had noticed. Nobody on the founding team cared, not because they were negligent but because there was no longer anything a standup would be for. And the way he'd understood software development to work, the way he'd watched every company he'd ever worked in do it, no longer described what he was doing at his desk.
 
-Then January came. Glenn and I had spent the preceding fall watching our own development work speed up by an order of magnitude under a way of building software we didn't yet have a name for. By early January we'd decided the company was going to stop building the old way. We had a claim we couldn't verify yet: that a person whose career is about clarifying intent, not implementing it, could ship production software directly under the right framework. Casey was the non-engineer among the three of us. We asked him to try.
+The last thing he realized, a minute later at the counter, was that he isn't a software engineer, has never been one, and yet the thing he'd shipped was running in production against a real API, serving real users, and would keep serving them tomorrow.
 
-He did. He didn't fail. In the hundred days between January 6 and April 15, 2026, Casey shipped dozens of VOSes against production code across two products, TradeCodex and Finaize, without Glenn or me touching the code that came out of his work. That fact is one of the three reasons this book exists.
+This book is about that Tuesday.
 
-This chapter is about what had to be true for that fact to be possible.
+It's also about the thing that Tuesday implies, which is that a twenty-five-year consensus about how software gets made is over. Over the next eighty thousand words we make that case. First as an argument. Then as a methodology. Then as a set of enterprise practices. And finally, in a chapter Casey wrote himself, as a lived experience. By the end we'll have done something the current literature on AI and software development hasn't yet done. We'll have described what replaces Scrum.
 
----
+Say that plainly. A lot of what follows depends on it. This book isn't "AI and agile, together at last." It isn't "how to add prompt engineering to your sprint." It isn't one of the genuine and useful books being written right now about how to use AI coding tools more effectively inside an otherwise unchanged software-engineering practice. Those books have their place. This isn't that book.
 
-It is also a book about the thing that fact implies, which is that a twenty-five-year consensus about how software gets built is over. We'll spend the next 80,000 words making that case. First as an argument, then as a methodology, then as a set of enterprise practices, and last in a chapter Casey wrote himself, as a lived experience. By the end we'll have done something the current literature on AI and software development has not yet done. We'll have described what replaces Scrum.
+The argument in your hands is that the software-engineering practice itself has to change, because the constraint it was designed for is gone, and the constraint it now faces isn't one any existing framework was built to hold.
 
-I want to say that plainly before we go further, because a lot of what follows depends on it. This book is not *AI and Agile, together at last*. It is not *how to add prompt engineering to your sprint*. It is not one of the many books being written right now about how to use AI coding tools inside an otherwise unchanged engineering practice. Those books have their place. This is not that book.
-
-The argument in your hands is that the engineering practice itself has to change, because the constraint it was designed for is gone, and the constraint it now faces is not one any existing framework was built to hold.
-
-That sentence is the whole claim. The case for it takes a chapter. What to do about it takes the rest of the book.
+The rest of this chapter is the case for that sentence. The rest of the book is what to do about it.
 
 ## The bottleneck moved
 
-For twenty-five years, every method for building software at scale has been organized around a single assumption. The assumption was that humans are the bottleneck of the implementation step, that typing code is the expensive, slow, error-prone activity, and that the job of a framework is to coordinate humans around that expensive activity so their typing-output gets used well.
+For twenty-five years, every method for building software at scale has been organized around the same assumption. Humans are the bottleneck at the implementation step. Typing code is slow, expensive, and error-prone, and a framework's job is to coordinate humans around that typing so their output gets used well.
 
-Every framework you know, descended from every framework that preceded it, is a solution to this problem. Waterfall said plan exhaustively up front, because the typing is the long pole and mistakes are expensive to rewrite. Scrum sliced the work into two-week increments, because the typing was still the long pole but requirements changed faster than the plan. Extreme Programming paired the typists so they caught each other's errors in real time. Kanban limited concurrent typing so throughput didn't collapse under context-switching. SAFe coordinated large groups of typists at ten-week resolution so the organization could plan. DevOps automated everything around the typing that wasn't typing, so the typists could concentrate on the typing. Continuous Delivery declared that the typing was fine; what happened after the typing was broken.
+Every framework you know, descended from every framework that preceded it, is a solution to that problem. Waterfall said plan exhaustively up front, because typing is the long pole and mistakes are expensive to rewrite. Scrum said slice the work into two-week increments, because typing is still the long pole but requirements change faster than the plan. Extreme Programming said pair the typists so they catch each other's errors in real time. Kanban said limit concurrent typing so throughput doesn't collapse under context-switching. SAFe said coordinate large groups of typists at ten-week resolution so the organization can plan. DevOps said automate everything around the typing that isn't typing, so the typists can concentrate on the typing. Continuous Delivery said the typing is fine; what happens after the typing is broken.
 
-Every one of those frameworks is a rational, careful, well-engineered answer to a single question. Typing is expensive. How do we organize an organization around that fact?
+Every one of those is a careful, well-engineered answer to the same question. Typing is expensive; how do we organize an organization around that fact?
 
-The question has changed.
+That question stopped being the right one.
 
-It's not that AI has made typing free, though in some meaningful sense it has. It's that the step between the human specification and the running code, the step we used to call implementation or coding or, on a bad day, cutting the ticket, has become, in the hands of a competent operator, roughly the cheapest step in the pipeline. Cheapest is a specific claim. It isn't a claim about clock time (some generation runs are slow). It's a claim about where the constraint now sits: somewhere else entirely. The step isn't worth organizing around.
+It isn't exactly that AI has made typing free, though in some meaningful sense it has. It's that the step between a human specification and running code, the step we used to call implementation or coding or, on a bad day, "cutting the ticket," has become, in the hands of a competent operator, roughly the cheapest step in the pipeline. Not the fastest, not the most interesting, just the cheapest. Which is another way of saying the one that isn't worth organizing around anymore.
 
-It isn't precisely free, of course. There are still costs: model-inference costs, verification costs, operator costs, the real cost of the time it takes to write the specification well. But those costs aren't typing costs. They're the costs of the other steps, steps that used to be cheap relative to typing because typing dominated them. When the dominant cost is removed from a system, the structure of the system does not stay the same. It shifts, all at once, to fit the new dominant cost.
+It isn't precisely free, of course. Model-inference cost exists. Verification cost exists. Operator time exists. The time it takes to write a specification well, which turns out to be the real expense, exists. But those aren't typing costs. They're the costs of the other steps, the ones that used to look cheap because typing dominated them. When the dominant cost is removed from a system, the structure of the system doesn't stay the same. It shifts to fit the new dominant cost.
 
-The new dominant cost is two things, not one. They sit on either side of the old bottleneck.
+Two costs, not one, on either side of the old bottleneck.
 
-The first is *intent*. Specifying, unambiguously and completely enough that a machine can act on it, what you actually want the software to do. In the old world we called this requirements engineering and treated it as a ten-percent activity because typing was the ninety-percent. In the new world, intent clarity is the dominant input to output quality. If you're any good at this work now, you've already noticed it. The difference between an AI tool that does what you wanted and an AI tool that does some plausible thing you did not want is almost always a difference in the specification going in. There's no prompt-engineering trick that compensates for intent that was vague from the start. you wanted is almost always a difference in the specification going in. No prompt-engineering trick compensates for intent that was vague from the start.
+The first is intent. Specifying, completely enough that a machine can act on it, what you actually want the software to do. In the old world we called this requirements engineering, and treated it as a ten-percent activity because typing was the ninety-percent. In the new world, intent clarity is the dominant input to output quality. If you're any good at this work now, you've already noticed. The difference between an AI tool that does what you wanted and an AI tool that does some plausible thing that isn't what you wanted is almost always a difference in the specification going in. No prompt-engineering trick compensates for intent that was vague from the start.
 
-The second is *verification*. Knowing, with reasonable confidence, that the code you shipped does what you intended it to do. In the old world we called this quality assurance and treated it as a downstream activity because typing was the expensive middle. In the new world, verification is the structural guarantee of the whole pipeline. If you cannot verify, you cannot ship at any speed, because shipping unverified AI output is a distinct and self-amplifying form of disaster, one this book will name specifically in a later chapter.
+The second is verification. Knowing, with reasonable confidence, that the code you shipped does what you intended. In the old world we called this quality assurance and treated it as a downstream activity because typing was the expensive middle. In the new world, verification is what keeps the whole pipeline honest. If you can't verify, you can't ship at any speed, because shipping unverified AI output is a distinct, self-amplifying form of disaster, one a later chapter names specifically.
 
-The bottleneck didn't go away. It moved. The typing step got cheap. The intent step and the verification step got dominant.
+The bottleneck didn't go away. It moved, permanently, from the typing step (which got cheap) to intent and verification (which got dominant).
 
-The implication, if you let it land, is that every framework currently in use at your company was designed for a bottleneck that no longer exists. That's a structural observation, not a polemical one. The thing Scrum's machinery is best at, coordinating the cost of human typing across a sprint, is no longer the cost that matters. The thing SAFe's machinery is best at, coordinating hundreds of human typists at ten-week resolution, is coordinating something that doesn't need to be coordinated anymore. Not as a criticism of the typists. As a statement about who's typing, which is now the machine.
+If you let this land, the consequence is difficult. Every framework in use at your company was designed for a bottleneck that isn't there anymore. Not as a light criticism, but as a structural fact. What Scrum's machinery is best at, coordinating the cost of human typing across a sprint, is no longer the cost that matters. What SAFe's machinery is best at, coordinating hundreds of human typists at ten-week resolution, is coordinating something that doesn't need to be coordinated at that resolution anymore. Not because the typists are bad. Because the machine is doing the typing.
 
 The frameworks have become friction.
 
 That's the observation the rest of the book rests on. Everything that follows, the methodology, the roles, the metrics, the adoption path, is an attempt to answer the question that opens up once you accept it. What should we build our organizations around instead?
 
-## A concession before we continue
+## A concession
 
-The sentence "the frameworks have become friction" can sound glib, and I've been in this industry long enough to know what happens when a new methodology talks about the old one that way. A third of readers stop reading, because they've heard this kind of thing three times this year already. Another third reads defensively. The last third reads eagerly, waiting for permission to say what they already thought. I don't want any of those three readers right now. I want the reader who's willing to judge the claim on its merits.
+"The frameworks have become friction" is the kind of sentence that can sound glib, and I've been in this industry long enough to know what happens when a new methodology talks about the old one that way. A third of the reader stops reading, having heard it three times this year. Another third reads defensively. The rest read with the enthusiasm of people who'd been waiting for permission to say it out loud. None of those three is the reader I'm writing for. I'm writing for the one who's weighing what is actually being claimed.
 
-So let me be fair to the frameworks we're about to name. Scrum was a reasonable solution to a real problem. SAFe was a reasonable scaling of that solution to larger organizations. The individual practices these frameworks advocated, the standup, the retro, the sprint review, the Program Increment, were not absurd. These were, and in many contexts still are, the best answer a careful engineering culture ever gave to the question of how to organize humans whose typing was the long pole.
+So. Scrum was a reasonable answer to a real problem. SAFe was a reasonable scaling of it. The individual practices these frameworks advocated (the standup, the retro, the sprint review, the Program Increment) were not absurd. They were, and in many contexts still are, the best answer a careful engineering culture ever gave to the question of how to organize humans whose typing was the long pole.
 
-The criticism isn't that the frameworks were wrong then. The criticism is that the condition they were designed for is no longer the condition we're in. A design rational for one constraint becomes an impediment under a different constraint. That's how engineering works. That is, for that matter, how software works.
+The criticism isn't that the frameworks were wrong then. The criticism is that the condition they were designed for isn't the condition we're in anymore. A design rational under one constraint becomes an impediment under a different constraint. That's how engineering works. That's how, for that matter, software works.
 
-So when the next chapter takes a scalpel to the specific thirty-two hours of ceremony a Scrum team currently pays per sprint, and demonstrates that the same coordination function can be accomplished in thirty minutes per week under the new constraint, please read that chapter the way I intend it. Not as a criticism of Scrum the framework, but as a description of the structural cost of running a machine calibrated for one constraint in a world that has moved to another.
+When a later chapter takes a scalpel to the specific thirty-two hours of ceremony a Scrum team currently pays per sprint, and demonstrates that the same coordination function can be done in thirty minutes a week under the new constraint, please read it the way I intend. Not as a criticism of Scrum the framework. As a description of the structural cost of running a machine calibrated for one constraint in a world that has moved to another.
 
-The book isn't gleeful about this. The book is trying to be right about it.
+The book isn't gleeful about this. The book is trying to be right.
 
 ## The new constraint and what it demands
 
-If the bottleneck has moved to intent and verification, then a method for building software at scale under the new constraint needs to be organized around those two things. That's the whole design brief. The rest is details.
+If the bottleneck has moved to intent and verification, a method for building software at scale under the new constraint has to be organized around those two things. That's the whole design brief. The rest is details.
 
-One useful way to see what this looks like in practice is to notice what has not changed.
+A useful way to see this is to notice what hasn't changed.
 
-Business outcomes haven't changed. You still need to know what you're trying to build and why. What has changed is that you now need to write that down with more precision than you used to, because something is going to act on it without the soft rails of a twenty-year-old engineering team's shared context. The intent specification is no longer a communication artifact between humans who already know most of the answer. It's a real input to an actor that does not know the answer and will act on whatever you give it.
+Business outcomes haven't changed. You still need to know what you're trying to build and why. What has changed is that you need to write it down with more precision than you did before, because something is going to act on it without the soft rails of a twenty-year-old engineering team's shared context. The intent specification isn't a communication artifact between humans who already know most of the answer. It's an input to an actor that doesn't know the answer and will act on whatever you give it.
 
-Users haven't changed. You still need to verify that what you built works for them. What has changed is that you now need to verify more, and earlier, and continuously, because the output is arriving faster than any QA process designed for human-speed generation can keep up with. The verification step hasn't been bypassed. It's been inverted. Brought upstream of generation, made continuous, made the structural guarantee rather than the downstream check.
+Users haven't changed. You still need to verify that what you built works for them. What has changed is that you need to verify more, earlier, and continuously, because the output is arriving faster than a QA process built for human-speed generation can keep up with. The verification step hasn't been bypassed. It's been inverted: brought upstream of generation, made continuous, made the guarantee rather than the downstream check.
 
-Organizations haven't changed. You still need to decide what you're going to fund and why. What has changed is that the unit of funding, the project, with its fixed scope and schedule and deliverable, was an instrument for a world in which humans were the constraint and scope was negotiable. The new constraint asks for a different instrument.
+Organizations haven't changed. You still need to decide what to fund and why. What has changed is that the unit of funding, the project with its fixed scope and schedule and deliverable, was an instrument built for a world in which humans were the constraint and scope was negotiable. The new constraint wants a different instrument.
 
-The methodology you'll meet in the next chapters takes those three observations and builds from them. It's called Continuous Intent Delivery. CID at the team layer. ELCID at the enterprise layer. The chapters to come will explain what that means, how it works, what it costs, and how you adopt it. But the central design move is already visible. The methodology is organized around the things that have become dominant: intent clarity, verification rigor, and outcome-based funding. It's not organized around the thing that became cheap, which is typing.
+The methodology you'll meet in the next chapters builds from those three observations. It's called Continuous Intent Delivery, CID at the team layer, ELCID at the enterprise layer, and the rest of this book is what that means, how it works, what it costs, and how you adopt it. But the design move is already visible. The methodology is organized around what became dominant (intent clarity, verification rigor, and outcome-based funding), not around what became cheap (typing).
 
-The shortest way to say this: *intent is the artifact, code is the exhaust.*
+The slogan form is: *Intent is the artifact. Code is the exhaust.*
 
-I need to be precise about what that means, because the sentence does a lot of work and will show up in later chapters more than once. It does not mean code is unimportant. Of course code is important; it's what runs. It means something specific. The artifact that humans should author, version, review, argue over, maintain, and treat as the organization's durable knowledge is the *specification of intent*, not the generated implementation. The code is what comes out the other end when the specification is right. The code is, in a reasonable sense, the predictable output of a well-run pipeline, not the creative output of a human act.
+It's worth being precise about what that means, because the sentence does a lot of work and shows up in later chapters more than once. It doesn't mean code is unimportant. Of course code is important; it's what runs. It means something specific. The artifact humans should author, version, review, argue over, maintain, and treat as the organization's durable knowledge is the specification of intent. Not the generated implementation. The code is what comes out the other end when the specification is right. The code is, in a reasonable sense, the predictable output of a well-run pipeline, not the creative output of a human act.
 
 ---
 
@@ -396,57 +390,61 @@ I need to be precise about what that means, because the sentence does a lot of w
 
 ## 1. Who I am and what I'm not
 
-Being from Oklahoma and a big sports enthusiast, I often get looked at as a retired football player more than a consultant or even a technologist. Standing at six foot two and a big frame, I'm often caught out on a football field somewhere coaching in my free time. That's relevant context, not a joke. When I walk into a meeting with David, the people in the room sometimes assume he's the consultant and I'm his security detail. The assumption's reasonable if all you have to go on is the way I look. I mention it because what I'm going to tell you in this chapter is that the thing I do for a living now is author the specifications for production software that runs against real customer data. If you'd told me on the day I was brought into Alchemaize that this would be part of my job, I'd have laughed, and then looked at how I can share knowledge or help streamline processes for operations.
+Being from Oklahoma and a big sports enthusiast, I often get looked at as a retired football player moreso than a consultant or even a technologist. Standing at six foot two inches and big frame I am often caught out on a football field somewhere coaching in my free time. That's relevant context, not a joke. When I walk into a meeting with David, the people in the room sometimes assume he's the consultant and I'm his security detail. The assumption's reasonable if all you have to go on is the way I look. I mention it because what I'm going to tell you in this chapter is that the thing I do for a living now is author the specifications for production software that runs against real customer data. If you'd told me on the day I was brought into Alchemaize that this would be part of my job, I'd have laughed, and then looked at how I can share knowledge or help streamline processes for operations.
 
-The actual job I was brought in for was to become the Chief Operations Officer. Supporting a startup that was aspirational in looking to build a product called Ember, an AI-augmented reading application. My background is not in engineering or anything related to building a codebase or deploying infrastructure. Even though I was working for one of the biggest cloud providers, my roles were more akin to consulting, customer service, operations, and Agile delivery, carried for long enough that it's the shape my career has. For four years immediately before Alchemaize I was at Amazon Web Services, at the Senior Manager level, leading a team of Customer Solutions Managers. If you haven't encountered that role before, a Customer Solutions Manager at AWS is the person who stands in the seam between an enterprise customer and the technical capability they're trying to adopt. You guide the migration. You hold the plan together. You translate between the customer's internal politics and the technology's actual shape. You do a great deal of it in Agile ceremonies, because that's the format enterprise delivery has mostly settled into. You don't write production code. That was my world for the immediate stretch before this one, and variations of it have been my world for most of my working life.
+The actual job I was brought in for was to become the Chief Operations Officer. Supporting a startup that was aspirational in looking to build a product called Ember. My background is not in engineering or anything related to building a codebase or deploying infrastructure. Even though I was working for one the biggest cloud providers, my roles were more akin to consulting, customer service, operations, and Agile delivery, carried for long enough that it's the shape my career has. For four years immediately before Alchemaize I was at Amazon Web Services, at the Senior Manager level, leading a team of Customer Solutions Managers. If you haven't encountered that role before, a Customer Solutions Manager at AWS is the person who stands in the seam between an enterprise customer and the technical capability they're trying to adopt. You guide the migration. You hold the plan together. You translate between the customer's internal politics and the technology's actual shape. You do a great deal of it in Agile ceremonies, because that's the format enterprise delivery has mostly settled into. You don't write production code. That was my world for the immediate stretch before this one, and variations of it have been my world for most of my working life.
 
-I say all that so the rest of the chapter lands cleanly. I've been in software-delivery rooms for over twenty years. I've run Agile programs. I've written requirements, backlogs, acceptance criteria, operating playbooks, and the kind of customer-facing documentation that has to survive a lawyer reading it. What I've never done, in any of those rooms, is write code. Not a little on the side, not as part of any technology implementations, none developed in my career. I can discern how technology supports a customer, I can explain it, but the under-the-hood interworkings to make it work is like a foreign language to me. What I can't do is type the fix. The twenty years of enterprise-delivery rooms sharpened the first skill without ever teaching me the second one, and until January I'd thought of that as a ceiling.
+I say all that so the rest of the chapter lands cleanly. I've been in software-delivery rooms for over twenty years. I've run Agile programs. I've written requirements, backlogs, acceptance criteria, operating playbooks, and the kind of customer-facing documentation that has to survive a lawyer reading it. What I've never done, in any of those rooms, is write code. Not a little on the side, not as part of any technology implementations, none developed in my career. I can discern how technology supports a customer, I can explain it, but the under the hood interworking's to make it work is like a foreign language to me. I can understand what is broken or not working and what are some culprits are from the technology stack. But what I can't do is type the fix. The twenty years of enterprise-delivery rooms sharpened the first skill without ever teaching me the second one, and until January I'd thought of that as a ceiling.
 
-I didn't come to Alchemaize planning to be anything other than the person who kept the company's operations intact while everyone else focused on building Ember. That was the plan when I was hired. Plans change and evolve. What happened instead was a change in what a certain kind of operational person can credibly do at work. The change is less dramatic than it sounds, and it's at the same time the most consequential professional thing that has happened to me.
+I didn't come to Alchemaize planning to be anything other than the person who kept the company's operations intact while everyone else focused on building Ember. That was the plan when I was hired. It is crazy how plans change and evolve. What happened instead was a change in what a certain kind of operational person can credibly do at work. The change is less dramatic than it sounds, and it's at the same time the most consequential professional thing that has happened to me, and to put into words, is a liberation I never thought possible before.
 
-And here's the fact this chapter is in the book to explain. In the hundred days covered by this book, I personally shipped production code, first on an app called The Trade Codex, then moved on to build Finaize, a modernized Auto F&I web app with a mobile companion, without David or Glenn touching the code I shipped. I did it under a methodology we created and evolved and had been building but hadn't yet named; the naming came after they watched me do it repeatedly. The methodology is what the rest of the book is about. This chapter is what it looked like from where I was sitting.
+And here's the fact this chapter is in the book to explain. In the hundred days covered by this book, I personally shipped production code, first on an app called The Trade Codex, then went and created a modernized Auto F&I web app with a mobile companion called Finaize, without David or Glenn touching the code I shipped. I did it under a methodology we created and evolved and had been building but hadn't yet named; the naming came after they watched me do it repeatedly. The methodology is what the rest of the book is about. This chapter is what it looked like from where I was sitting.
 
-## 2. The day David helped me install the tool
+## 2. The day David helped me install the tool to help
 
-It was a Thursday at the end of January. A few things had just happened at the company. Ember, the product I'd been hired to help launch, had shipped its MVP the month before, in December. The Series A push I'd been brought on to run was visible on the calendar. David and Glenn had been experimenting through the fall with AI-augmented development, using Cursor and Kiro and patterns of generation and review, and by early January they'd reached a conclusion neither of them had expected to reach when the year began. The shape of software development itself was changing, at their desks, in real time, and Alchemaize was going to bet on the change rather than work around it.
+It was a Thursday at the end of January. A few things had just happened at the company. Ember, the product I'd been hired to help launch, an AI-augmented reading application David and Glenn had founded Alchemaize to build, had shipped its MVP the month before, in December. The Series A push I'd been brought on to run was visible on the calendar. And then a major life event occurred that changed everything. That story may be for another time but what started this transformation was watching what David and Glenn was accomplishing and building. They always joked with me about hey it would be cool to teach you how to write code, it would be great to build something together and I always laughed it off and said "Yeah, maybe one day" They'd been experimenting through the fall with AI-augmented development (Cursor, Kiro, patterns of generation and review), and by early January they'd reached a conclusion neither of them had expected to reach when the year began. The shape of software development itself was changing, at their desks, in real time, and Alchemaize was going to bet on the change rather than work around it.
 
-On this Thursday in January, during one of David and my daily calls, I finally decided to give this development approach a try. We're a fully distributed company. David lives in Brentwood, Tennessee; Glenn in College Station, Texas; me in Claremore, Oklahoma. No office, no shared zip code. Most of the serious conversations happen over video. This one was a video call we were already on, and I decided it was time to try something different. What David and Glenn had been showing and leading the way on, it was time for me to lean in and help.
+On this Thursday in January, during David and I's daily calls I finally decided to give this code development approach a try. What is unique is we're a fully distributed company. David lives in Brentwood, Tennessee; Glenn in College Station, Texas; me in Claremore, Oklahoma. No office, no shared zip code, nothing tying us together aside a time together in a zoom call. Most of the serious conversations happen over video. The ones that aren't urgent go to Slack. The ones that are, we hop on a meeting to discuss. This one was a video call we were already on, and I finally decided it was time to try something different and give this development approach a try. What David and Glenn has been showing and leading the way on, it was time for me to lean in and help.
 
-The something different was that David and Glenn had been watching their own development speed up by an order of magnitude, and the speedup had surfaced a claim they couldn't yet verify. The claim was that the skills the speedup rewarded were not the skills the old methodology had rewarded. The bottleneck had moved from planning, typing, and iterating on code to specification and verification, and a person whose career was about clarifying intent rather than implementing it could, given the right framework, ship production software. When I decided it was time to try, it was out of a genuine curiosity to see what I could do. They got me set up and shared some guardrails I needed to be aware of and then let me go, checking in periodically, which then turned into the focal point of our conversations every time we met.
+The something different was that David and Glenn had been watching their own development speed up by an order of magnitude, and the speedup had surfaced a claim they couldn't yet verify. The claim was that the skills the speedup rewarded were not the skills the old methodology had rewarded. The bottleneck had moved from planning, typing and iterating on code, which is that foreign language I do not understand, to specification and verification, and a person whose career was about clarifying intent (like mine) rather than implementing it could, given the right framework around the generation step, ship production software. When I decided it was time to try, it was out of a genuine approach to see what I could do. To lean into the can I "really" do this even if I don't know what is going. My thought was I would need to lean on Glenn and David to show me and teach me what I need to do. They got me setup and shared some guardrails I need to be aware of and then let me go, checking in periodically which then turned into the focal point of our conversations every time we met.
 
-I was curious, and I also wanted to be helpful, and I'd spent enough years at AWS watching enterprise customers struggle with the same specification-and-handoff problem that I already had a theory the handoff was the expensive step. This new approach was to try a new way, with an IDE to help, and take an idea to production to see how far I could get on my own. I assumed I'd probably fail, and we'd all learn something, and we'd go back to the Series A push. I was wrong about the first part of that assumption.
+I was curious, and I also wanted to be helpful, and I'd spent enough years at AWS watching enterprise customers struggle with the same specification-and-handoff problem that I already had a theory the handoff was the expensive step. Why, well the process of planning work, holding daily standups and timeboxing development created a wait time that in essence queued a season professional in development to pick up the work, that wait could be hours or it could have been days or potentially a week before it was ready to be picked up. This new approach, was to try this new way, with an IDE to help but reduce that wait time and take an idea to production to see how far I could get on my own. I assumed I'd probably fail, and we'd all learn something, and we'd go back to the Series A push. I was wrong about the first part of that assumption. The second part turned out to be true, though not in the way any of us expected.
 
-The first thing David did was help me set up my tool. Then the fun part: we worked through the first specification of what we wanted to do, which spawned the VOS mentality. It wasn't me saying what the system is architected to do. It was me saying out loud what the outcome should be, what would be the acceptance of it, and how I wanted it to behave. No code, no architecture, nothing of that nature, just what I wanted to drive from an outcome, in human-to-human speaking language, nothing more.
+The first thing David did was help me set up my tool. This tool was the entry way for me to understand how to set up my project, put in the right guardrails to be able to ask the right questions and get connected to the pieces I needed to be successful. Then the fun part, we worked through the first specification of what we wanted to do which spawned the VOS mentality. It wasn't me saying what the system is architected to do, it was me saying outloud what the outcome should be, what would be the acceptance of it, and how do I want it to behave. No code, no architecture, nothing of that nature, just what I wanted to drive from an outcome, in human to human speaking language, nothing more. We were very precise about the framing. We didn't just "write the requirements." We didn't go through the "describe the feature." Exercise, it was what did we want to *write down that the application will do (outcome focused), in a way that is specific enough that a machine could not possibly misinterpret you, and test it by imagining the machine that could not.*
 
 I'd been asked to write requirements documents before, in other jobs. I'd even been pretty good at it in the context I'd been asked to do it in, which was the context of writing requirements for human software engineers who would read the document, fill in the parts I'd been vague about from their own professional judgment, and produce something approximately correct. That's what requirements documents had always been for, in my professional experience. They were a rough sketch the engineer then did the real work to complete.
 
-Even though it seemed similar, we were working on something different. We were designing the outcome of the ask of the system to be complete enough to stand alone. What we were doing was taking out of the document all the assumptions I'd normally have left for the engineer to fill in, and replacing every one of them with a sentence as guardrail or ask.
+Even though it seemed similar, we were working on something different. We were designing the outcome of the ask of the system to be complete enough to stand alone. What we were doing was taking out of the document all the assumptions I'd normally have left for the engineer to fill in, and to replace every one of them with a sentence as guardrail or ask.
 
-Here's the practical thing. The skill of writing a VOS is not the skill of writing code. It's the skill of knowing, precisely, what you want, and being willing to say it in a way that cannot be negotiated. Those are two distinct skills, and the second one is harder than it sounds, because most of us spend our working lives writing descriptions of things that are deliberately fuzzy so they can be negotiated later. Sometimes that's diplomacy. Sometimes it's leaving room for the engineer's judgment. In most rooms, those are the right moves.
+Here's the practical thing. The skill of writing a VOS is not the skill of writing code. It's the skill of knowing, precisely, what you want, and being willing to say it in a way that cannot be negotiated. Those are two distinct skills, and the second one is harder than it sounds, because most of us spend our working lives writing descriptions of things that are deliberately fuzzy so they can be negotiated later. Sometimes that's diplomacy. Sometimes it's leaving room for the engineer's judgment, or for a stakeholder's face. In most rooms, those are the right moves.
 
-What a VOS asks for is the opposite of diplomacy. It asks for a specification that leaves no room for doubt. A machine reads what I wrote. If I write something vague, the machine will produce something that is, on average, close, and sometimes it will be right and sometimes it won't, and when it isn't, the bug is my fault, not the machine's, because I didn't say what I wanted.
+What a VOS asks for is the opposite of diplomacy. It asks for a specification that would leave no room for doubt and is more authoritative. *The deal jacket generated for a completed F&I transaction shall include every required disclosure document for the customer's state of purchase; any jacket missing a required disclosure is a verification failure and the jacket shall not be marked complete.* That's a sentence I wouldn't send in an email. I'd soften it. I'd phrase it as *we really need to make sure all the disclosures are in there*. That phrasing would, in the old world, have been fine. An engineer reading it would have understood what I meant.
+
+A machine reading it does not understand what I mean. A machine reads what I wrote. If I write *we really need to make sure all the disclosures are in there*, the machine will produce something that is, on average, disclosure-ish, and sometimes it will be and sometimes it won't, and when it isn't, the bug is my fault, not the machine's, because I didn't say what I wanted.
 
 Writing a VOS is the practice of saying what you want and being specific about it.
 
-It took me about three weeks to get reasonably good at it.
+The application I cut my teeth on was a small one: The Trade Codex, an application to help somebody interesting in investment trading, learn to do just that, place investment trading. I have spoken with so many people that they really don't know how to trade and it is an unknown for them. So what did I do about it? I created an application that was a journal first, uses AI to provide feedback on your trades you make, along with bringing in a learning path to learn the basics of trading. All of this while bringing in my own flavor of a fantasy world to help bridge the gap between trading and games that I enjoy.
+
+I wrote four VOSes against TradeCodex over a weekend. It was the training ground. Something I thought impossible started to turn into something realistic. I was able to leverage AI, define my intent and what I wanted to accomplish, and AI orchestrated the whole build with me overseeing, verifying and providing feedback to get it the way I wanted. By the next Monday, I had the basis to a journaling application, AI feedback built into the tool and the start to my campaign to help others learn the basics of investment trading. All leveraging VOS structure and all developed at 40x the speed it would have taken an engineer several months to do just a few years ago.
+
+A product small enough that I could hold the whole thing in my head, but real enough that real users were going to use it. Before I knew it, I had built a fully functioning application, deployed on AWS infrastructure and a way for others to use it all by following our CID framework. Where code development is no longer the bottleneck, instead it has now shifted to the human intent and verification of what is coordinated and built by AI.
 
 ## 4. Three things that surprised me
 
-I want to share with you the three things that surprised me most about this journey.
+I want to share with you the three things that surprised me most about this journey. I feel this is important because the barrier to understand code and develop a working product has reduced tremendously with AI and I wanted to share my experiences.
 
-**The first thing that surprised me** is how easy it was to get started. Yes, there's a lot to set up initially, but once you get going, it really is just something you interact with and as a result something great comes out the other side. You can speak to the tool like you would a human, type what you mean, be specific, and it will help shape what you want. The key is holding true to what you want to see and don't be afraid to iterate on it until you get it the way you want. You don't have to understand code, but you do have to have a vision, and that vision will help you develop and be proud of what you create.
+**The first thing that surprised me** is how easy it was to get started. Yes, it is probably a lot to get started, to set up your tool, but once you get going, it really is just something that you interact with and as a result something great comes out the other side of it. You can speak to the tool like you would a human, type what you mean, be specific, and it will help shape what you want. The key here is holding true to what you want to see and don't be afraid to iterate on it and show it what you want and talk to the tool until you get it the way you want. You don't have to understand code, but you do have to have a vision and that vision will help you develop and be proud of what you develop with AI.
 
-**The second thing that surprised me** is that intent and clarity of that intent is important to get it right the first time. The tools are getting better at interpreting meaning and what we want to produce, but it's not perfect. You learn a lot by reading and seeing what the tool is doing, and as a result you quickly find out that the clearer you are with your intent and the better you write your Gherkin contracts, the better results you get.
+**The second thing that surprised me** is intent and clarity of that intent is important to get it right the first time. Machines and tools are getting better at interpreting meaning and what we want to produce, but it is not perfect. You learn a lot by reading and seeing what the tool is doing, as a result you quickly find out that the clearer you are with your intent and the better you write your Gerkin contracts, the better results you get.
 
-**The third thing that surprised me** is this: why was I so afraid to do this in the first place?
+**The third thing that surprised me** is this, why was I so afraid to do this in the first place!
 
-I always looked at software development as a skillset needed, a language I needed to learn, or just the barrier to entry was too high for me. Glenn and David were always ready to support me and wanted to share with me how to develop something and to try it. I was always resistant, all through my career, but when I did try it, it opened a whole new world. David and Glenn tell me all the time that I sometimes create something that they feel is better or has a better look than what they can create. We quickly found out that you don't have to be an engineer to create something amazing. Just having the idea, a methodology to support it, you can create something quick and beautiful that fits your style. The hardest part is just getting started.
-
-So my call to action for you is go try it. You may surprise yourself with what you're able to create. Don't be afraid of it, just try it and learn. You never know, it could open a whole new world for you.
+I always looked at software development as a skillset needed, a language I needed to learn, or just the skills needed to get started was just too high for me. Glenn and David were always ready to support me and wanted to share with me how to develop something and to try it! I was always resistant, all through my career, but when I did try it, it opened a whole new world. David and Glenn tell me all the time that I sometimes create something that they feel is better or has a better look than what they can create. My artistic creations and how they got added into an application has surprised my peers that we quickly found out that you don't have to be an engineer to create something amazing. Just having the idea, a methodology to support it, you can create something quick and beautiful that fits your style. The hardest part is just getting started. So, my call to action for you is go try it, you may surprise yourself what you are able to create by just trying it. Don't be afraid of it, just try it and learn. You never know, it could open a whole new world for you that you never knew that existed, or that you were capable of doing this before.
 
 ---
 
-*End of excerpt. Section 3, the full worked example, and Section 5, the closing argument to non-engineering readers, are in the book. The full Chapter 8 is the first full-length chapter to ship in the MEAP.*
+*End of excerpt. This reproduces Sections 1, 2, and 4 of Casey's April 2026 voice-pass revision. Section 3 (the full worked example) and Section 5 (the closing argument to non-engineering readers) are in the book. The full Chapter 8 is the first full-length chapter Manning will ship in the MEAP.*
 
 \newpage
 
@@ -464,11 +462,11 @@ Scrum is a coordination framework for human typists. The sprint, the story-point
 
 CID isn't a coordination framework for human typists. It's a methodology for the case in which typing isn't the expensive step. The unit, the VOS, is sized to intent clarity, not typing effort. The cadence (continuous) is sized to verification throughput, not sprint duration. The roles map onto the steps that got dominant when typing got cheap (intent, verification, orchestration), not the steps that were dominant when typing was the bottleneck.
 
-A team can, in principle, run both frameworks side by side while adopting. The book describes how. But they aren't the same thing. A CID pod running Scrum ceremonies on top of the CID loop is what we call, in Chapter 12, a *Costume CID* implementation: the vocabulary has been adopted, the behavior hasn't. It's the most common failure mode we predict for this methodology, and we name it specifically.
+A team can, in principle, run both frameworks side by side while adopting. The book describes how. But they aren't the same thing. A CID pod running Scrum ceremonies on top of the CID pipeline is what we call, in Chapter 12, a *Costume CID* implementation: the vocabulary has been adopted, the behavior hasn't. It's the most common failure mode we predict for this methodology, and we name it specifically.
 
 ### "Why only three roles?"
 
-The three roles map onto the three steps in the loop that need humans. Intent, authored by the Intent Engineer. Generation, orchestrated by the AI Orchestrator. Verification, owned by the Verification Owner. Every other concern in a traditional engineering team either lives inside one of those three or lives in the organizational layer above the pod, the enterprise layer (ELCID), covered in Chapters 9 through 11 of the book.
+The three roles map onto the three pipeline stages that need humans. Intent, authored by the Intent Engineer. Generation, orchestrated by the AI Orchestrator. Verification, owned by the Verification Owner. Every other concern in a traditional engineering team either lives inside one of those three or lives in the organizational layer above the pod, the enterprise layer (ELCID), covered in Chapters 9 through 11 of the book.
 
 We considered more roles. We tried more roles, in early experiments. Every additional role in the pod either collapsed back into one of the three or added coordination overhead that didn't pay for itself. The three-role shape is the one that survived a hundred days of applied pressure.
 
@@ -528,7 +526,7 @@ We're happy to share the specific tool choices we made during the hundred days i
 
 Yes. Brentwood, Tennessee. Claremore, Oklahoma. College Station, Texas. No office, no co-working, no scheduled in-person weeks. We've met in person twice as a three-person team since October 2025. Everything else (every VOS, every code review, every verification gate, every production deploy) has happened over video, Slack, and git.
 
-This is a feature of the methodology, not a coincidence of our circumstances. The CID loop doesn't require co-location. It doesn't benefit from co-location. The acceptance contract is the coordination mechanism. It's a written artifact that travels across time zones without degradation. The three-role structure is asynchronous by design.
+This is a feature of the methodology, not a coincidence of our circumstances. The CID pipeline doesn't require co-location. It doesn't benefit from co-location. The acceptance contract is the coordination mechanism. It's a written artifact that travels across time zones without degradation. The three-role structure is asynchronous by design.
 
 We name this here because a small but vocal contingent of readers is going to ask whether the methodology secretly requires an office. It doesn't. The book addresses this in Chapter 13 and again in Chapter 12 (the anti-pattern called *Geography Theater*, using return-to-office as a methodology-adoption crutch).
 
@@ -564,25 +562,25 @@ If the argument lands and you want to follow the methodology's development:
 - **The GitHub repository.** `github.com/alchemaize/field-report-v0` hosts the source markdown and diagrams for this report under CC BY-NC-SA. Pull requests for typos, clarifications, and factual corrections are welcome. Structural feedback goes to the issue tracker or directly to the three of us.
 - **The Manning MEAP.** The full-length book, *Continuous Intent Delivery*, is in publisher discussions as of April 2026. When the MEAP launches (targeted late July or early August 2026), the first three chapters (Chapter 1, Chapter 3, Chapter 8) go live to MEAP readers. Remaining chapters ship in batches through Q4 2026. Full manuscript by end of Q4 2026. Print edition Q1 2027. We'll announce the publisher and MEAP page as soon as the contract is signed.
 
-If the argument doesn't land, and you want to tell us why, we'd rather hear from you than from the reviewer of the finished book. Email the three of us collectively at `team@alchemaize.ai`, or file a GitHub issue. We're running the feedback loop actively between now and the publisher edition. The book will be written once. We'd rather hear the hard feedback now than six months from now.
+If the argument doesn't land, and you want to tell us why, we'd rather hear from you than from the reviewer of the finished book. Email the three of us collectively at `team@alchemaize.ai`, or file a GitHub issue. We're running the feedback channel actively between now and the publisher edition. The book will be written once. We'd rather hear the hard feedback now than six months from now.
 
 \newpage
 
 # Part IX. About the Authors
 
-**David Kim** is the President and CFO of Alchemaize and the lead author of *Continuous Intent Delivery*. He is a United States Marine Corps veteran who served alongside Glenn Knepp beginning in 1996. David spent five years at Amazon Web Services, most recently at the Senior Manager level in enterprise technology customer leadership, product, and operations. His career carries both halves of the split that separates most software leaders: a technical coding background in the first half of his career and a deep consulting and Agile background in the second. He is the author of two prior books, *Bullets Don't Fly: A Supply Marine's Memoir* (2025) and *The Real Money Guide* (2025), both self-published via Amazon and IngramSpark. The latter is accompanied by a companion site, therealmoneyguide.com, hosting more than 30 interactive financial tools. David lives in Brentwood, Tennessee, and has been working on the problem this book addresses since late 2024.
+**David Kim** is a career product and technology leader, author of two prior books in adjacent domains, and the lead author of *Continuous Intent Delivery*. He is the co-founder and Chief Product Officer of Alchemaize. David lives in Brentwood, Tennessee. He has been working on the problem this book addresses since late 2024, and the hundred-day case study that produced the methodology was run from his home office.
 
-**Casey Robinson** is the Chief Operating Officer of Alchemaize and a co-author of *Continuous Intent Delivery*. He joined the company in October 2025 after a career in customer service, consulting, operations, and enterprise delivery, most recently as a Senior Manager at Amazon Web Services leading a team of Customer Solutions Managers. Casey's career roots started in customer service as a technical representative at DirecTV; David brought him into the software and technology world years later, hiring him to a consulting firm in Austin, Texas. That hire is where the twenty-year professional relationship began. He had never written a line of production code before January 2026. He has now shipped production code on multiple applications inside the methodology the book describes, and is the primary author of the chapter (Chapter 8) that argues the methodology's central claim about who gets to build software next. Casey lives in Claremore, Oklahoma.
+**Casey Robinson** is the Chief Operating Officer of Alchemaize and a co-author of *Continuous Intent Delivery*. He joined the company in October 2025 after a career in operations, consulting, and enterprise delivery, most recently as a Senior Manager at Amazon Web Services leading a team of Customer Solutions Managers. He had never written a line of production code before January 2026. He has now shipped production code on two applications inside the methodology the book describes, and is the primary author of the chapter (Chapter 8) that argues the methodology's central claim about who gets to build software next. Casey lives in Claremore, Oklahoma.
 
-**Glenn Knepp** is the Chief Executive Officer and Chief Technology Officer of Alchemaize and a co-author of *Continuous Intent Delivery*. He is a career engineer, architect, and cybersecurity specialist whose career runs from classified military intelligence systems through enterprise platform development to startup founding. Glenn is a United States Marine Corps combat veteran who served from 1988 to February 1996 as a Signals Intelligence Specialist and Special Operations Reconnaissance Team Leader. After his uniformed service, he continued supporting the intelligence community as a civilian contractor, providing technical engineering and analysis to the U.S. Air Force, Marines, Navy, and CIA, and served as a trusted agent security manager for the NSA on classified systems. He is a named co-inventor on multiple patents spanning cloud computing, video streaming, and video cryptography. Glenn co-founded two prior startups, including Gazoo, Inc. (cloud-based Computer Labs as a Service, $1.9M in funding) and Ispira Technologies (cryptographic video streaming). He is the Verification Owner on the founding team, author of the acceptance-contract templates used across the hundred-day case study, and primary author of the chapters on verification and compliance. Glenn lives in College Station, Texas.
+**Glenn Knepp** is the Chief Executive Officer and Chief Technology Officer of Alchemaize and a co-author of *Continuous Intent Delivery*. He is a career software engineer and engineering leader whose prior work includes senior technical roles at startups and at AWS. He is the Verification Owner on the founding team, author of the acceptance-contract templates used across the hundred-day case study, and primary author of the chapters on verification and compliance. Glenn lives in College Station, Texas.
 
-The three of us founded Alchemaize in August 2025 to build Ember, an AI-augmented reading application. CID emerged from the work of building Ember and watching what happened when the founding team tried something that worked better than any of us predicted. We've never shared an office. We don't plan to.
+The three of us founded Alchemaize in August 2025. We've never shared an office. We don't plan to.
 
 \newpage
 
 # Colophon
 
-*Field Report from the First Hundred Days* was drafted in Markdown, typeset with pandoc, and produced as a PDF for the Leanpub and GitHub distribution. Cover and interior typography uses Inter, Instrument Serif, and JetBrains Mono.
+*Field Report from the Hundred Days* was drafted in Markdown, typeset with pandoc, and produced as a PDF for the Leanpub and GitHub distribution. Cover and interior typography uses Inter, Instrument Serif, and JetBrains Mono.
 
 The report is released under Creative Commons BY-NC-SA 4.0. You may share, adapt, and build on the material non-commercially with attribution. The full text of the license is at `creativecommons.org/licenses/by-nc-sa/4.0`.
 
@@ -594,4 +592,4 @@ This is v0.1, a draft release. v1.0 accompanies the Manning MEAP launch in late 
 
 DK, CR, GK
 Alchemaize
-April 2026
+April 29, 2026

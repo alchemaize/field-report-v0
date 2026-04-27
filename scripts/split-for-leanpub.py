@@ -50,8 +50,10 @@ def assign_filename(index, chunk):
     if index == 0:
         return "00-cover.md"
     s = slug(chunk)
+    # Prefix match, not substring match. "about" should match "about-this-document"
+    # but must not also match "part-ix-about-the-authors".
     for marker, fname in FILENAME_MAP:
-        if marker in s:
+        if s.startswith(marker):
             return fname
     return f"unknown-{index:02d}.md"
 

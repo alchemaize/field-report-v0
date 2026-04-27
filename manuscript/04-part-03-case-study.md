@@ -2,21 +2,19 @@
 
 ## One hundred days, thirty-five applications
 
-Between January 6 and April 15, 2026, three founders of Alchemaize shipped thirty-five production applications using the methodology described above. Two FTE, roughly.
-
-We hadn't named the methodology when we started. We named it after we'd watched it work enough times to trust it. The naming came in late March, after the case study was substantially complete. The methodology itself had emerged in real time in our own work starting in the fall of 2025.
+Between January 18 and April 20, 2026, three founders of Alchemaize shipped thirty-five production applications using the methodology described above. Two FTE, roughly. That hundred days is the case study. It is also the second hundred days of Alchemaize, not the first, and the first hundred days are why the second ones happened.
 
 This section is the evidence. It documents what we counted, what we didn't, which projects we killed, and the measurement methodology. We're doing it in public because an extraordinary claim without a counting methodology is a sales pitch, and we'd rather be boring than wrong.
 
 ## Who we are and what we had
 
-Alchemaize was founded in August 2025 by David Kim and Glenn Knepp for the purpose of building Ember, an AI-augmented reading application that shipped an MVP in December 2025. David and Glenn have known each other since 1996, having served together in the United States Marine Corps. Casey Robinson joined as COO in October 2025, hired to run operations ahead of a Series A push.
+Alchemaize was founded in August 2025 by David Kim and Glenn Knepp for the purpose of building Ember, an AI-augmented reading application. Casey Robinson joined as COO on October 1, 2025, hired to run operations ahead of a Series A push. By October 20 we had a four-person development team in place, three developers and an AWS solutions architect, all part-time, all comped on options and deferred contingent compensation tied to seed and Series A milestones, all holding full-time jobs at FAANG companies.
 
-Through the fall of 2025, David and Glenn's own development work was speeding up in ways neither had seen before. They were using Cursor and Kiro in the generation step, writing specifications with more precision than they were used to, and verifying output with small test harnesses they'd built along the way. By the end of December they had stopped calling what they were doing "using AI coding tools" and started calling it, roughly and informally, "the thing we are doing now."
+Through the fall of 2025 we built Ember the old way. Standups, sprints, retros, sprint reviews, planning. Cursor and Kiro layered on top of that methodology rather than redesigning it. The Ember web-app MVP shipped on December 1, 2025. The user-acquisition story did not follow. The product worked beautifully on Project Gutenberg titles, and the audience the user-acquisition story depended on wanted commercial fiction (Harry Potter, Fourth Wing, the books actually being read), and DRM made that catalog inaccessible to us without a Kindle integration we had not yet been able to start a conversation about. By the end of December the development team was wound down. The first hundred days of Alchemaize, October 1, 2025 through January 9, 2026, ended with a finished MVP that could not yet sell at the scale we needed and a clear answer that the methodology we had been operating under was not going to make the company's future.
 
-In the first week of January, they called Casey in and asked him to try running a slice end-to-end himself. He was a non-engineer. If the thing they were calling "the thing we are doing now" could be run by Casey, then it was a methodology. If not, it was a productivity hack.
+In the second week of January, the three of us concluded that we had to fundamentally change how Alchemaize worked. We named the new approach Continuous Intent Delivery. On January 18, 2026, we drew a line in the sand. The pod was the three founders. No development team, no architect. Three people, three states, three home offices.
 
-He did. The next hundred days is what we're reporting on.
+Ten days later, on January 28, 2026, at four in the morning Central time, Amazon issued a company-wide reduction in force. Sixteen thousand Amazonians received notification of position elimination, with a 90-day notification period. David's entire team of fourteen, including Casey, who led a sub-team within David's broader org, and including David, was hit. The methodology we had agreed to test ten days earlier became, in the space of one morning, the only work either of them had in front of them. The next hundred days is what we're reporting on.
 
 During the hundred days, the founding team was:
 
@@ -47,7 +45,7 @@ We did not count:
 The 35 break down as follows:
 
 - **12** in the Alchemaize portfolio (consumer and small-business applications): Ember, Drawer, Flipmode, Noshmode, Radient, Renew, Skipday, Starfish, TradeCodex, VisibleWealth, Yeon, and the Alchemaize marketing site.
-- **11** in the Finaize suite, the cash-flow product Casey spent most of the hundred days on. Finaize ships as a suite: the web app, the mobile companion, the reconciliation engine, the bank-line ingestion service, the reporting service, several internal admin tools, and a small set of customer-facing microsites.
+- **11** in the Finaize suite, the modernized Auto F&I product Casey spent most of the hundred days on. Finaize ships as a suite: the web app, the mobile companion, the deal-structuring engine, the lender integration service, the reporting service, several internal admin tools, and a small set of customer-facing microsites.
 - **6** in the Catalyst partnership surface, the AWS-aligned consulting engagement artifacts: the assessment intake, the ROI calculator, the deal-desk automation, the customer-onboarding flow, and two partner-integration applications.
 - **4** in the BoxLens / Albo / Ember-extension surface: small companion applications and experiments.
 - **2** we're declining to name because they're under NDA with external pilot customers.

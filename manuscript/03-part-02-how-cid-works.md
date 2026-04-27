@@ -2,13 +2,13 @@
 
 ## What this part is for
 
-The rest of Part II describes CID in enough depth that you can argue with it. It introduces the three roles, the five-stage loop, the unit of work, and the four metrics that replace the velocity dashboard. It doesn't give you enough to run the methodology inside an organization. That's in the book.
+The rest of Part II describes CID in enough depth that you can argue with it. It introduces the three roles, the four-stage pipeline plus parallel watching layer, the unit of work, and the four metrics that replace the velocity dashboard. It doesn't give you enough to run the methodology inside an organization. That's in the book.
 
 The asymmetry is deliberate. An argument has to be made in public. The practice of running a method has to be taught carefully. This report does the first. The book does the second.
 
-## The five-stage loop
+## The four-stage pipeline and the watching layer
 
-CID is a loop, not a sprint. There's no fixed cadence. It runs at the pace verification allows.
+CID is a pipeline, not a sprint. There's no fixed cadence. It runs at the pace verification allows. The pipeline is per-VOS, forward flow, with two reverse edges for fast correction. Observation runs as a parallel watching layer alongside, against the deployed inventory, and seeds new intents at the head of the stream.
 
 **1. Intent.** A human, the Intent Engineer, writes a specification of what should be built. The specification is a VOS, a Verifiable Outcome Slice, and it's the unit of work in the methodology. A VOS has five sections: WHY, WHAT, HOW, CONTEXT, OUTCOME. We describe them below.
 
@@ -18,9 +18,9 @@ CID is a loop, not a sprint. There's no fixed cadence. It runs at the pace verif
 
 **4. Verification.** The Verification Owner runs the acceptance contract from the VOS against the generated code. The contract is executable. It either passes or it doesn't. If it doesn't, the slice goes back to the Intent Engineer with notes. The Verification Owner doesn't report to the delivery chain. Their job is to say no.
 
-**5. Observation.** The slice ships. Production telemetry confirms, or fails to confirm, that the outcome described in the VOS was actually produced for real users. Observation loops back into intent, closing the slice or opening a new one.
+**5. Observation.** The slice ships. Production telemetry confirms, or fails to confirm, that the outcome described in the VOS was actually produced for real users. Observation watches the slice in production from the parallel watching layer. The shipped slice is terminal. When observation surfaces actionable signal, it seeds a fresh VOS at the head of the pipeline.
 
-The loop is continuous. It doesn't run once per sprint. It runs as fast as the verification step can be honored, typically several slices per day per Intent Engineer once the pod has matured.
+The pipeline is continuous. It doesn't run once per sprint. It runs as fast as the verification step can be honored, typically several slices per day per Intent Engineer once the pod has matured.
 
 ## The three roles
 
@@ -48,7 +48,7 @@ The VOS is the unit of work. It replaces the story, the ticket, the feature, the
 
 **OUTCOME.** The production signal. One sentence describing what will be observable in telemetry or user behavior if the slice succeeds. Observation watches for this.
 
-We include one full worked VOS (the cash-flow reconciliation slice Casey shipped on Finaize) in Part IV. The book has ten more and an appendix of templates.
+We include one full worked VOS (the deal-jacket assembly slice Casey shipped on Finaize) in Part IV. The book has ten more and an appendix of templates.
 
 ## The four metrics
 

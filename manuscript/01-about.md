@@ -1,6 +1,6 @@
 ## About this document
 
-*Field Report from the First Hundred Days* is a free, roughly sixty-page artifact released ahead of our full-length methodology book, *Continuous Intent Delivery*, currently in publisher discussions. It exists because the methodology is moving faster than the publishing industry, and we didn't want to wait eighteen months to start the conversation.
+*Field Report from the Hundred Days* is a free, roughly sixty-page artifact released ahead of our full-length methodology book, *Continuous Intent Delivery*, currently in publisher discussions. It exists because the methodology is moving faster than the publishing industry, and we didn't want to wait eighteen months to start the conversation.
 
 What's in it.
 
@@ -16,7 +16,7 @@ What's held back. The enterprise layer, the compliance framework, the full adopt
 
 The report is pay-what-you-like on Leanpub (minimum zero), mirrored on GitHub under CC BY-NC-SA, and linkable from `alchemaize.ai/field-report`. Typos and factual corrections via pull request. Structural feedback goes to the GitHub issue tracker, or directly to the three of us.
 
-We founded Alchemaize in August 2025 to build Ember, an AI-augmented reading application. David is in Brentwood, Tennessee. Casey in Claremore, Oklahoma. Glenn in College Station, Texas. We've never shared an office. We don't plan to.
+We founded Alchemaize in August 2025. David is in Brentwood, Tennessee. Casey in Claremore, Oklahoma. Glenn in College Station, Texas. We've never shared an office. We don't plan to.
 
 DK, CR, GK
-April 2026
+April 29, 2026

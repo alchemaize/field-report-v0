@@ -1,4 +1,4 @@
-# Field Report from the First Hundred Days
+# Field Report from the Hundred Days
 
 **What happened when three founders stopped building software the old way.**
 
@@ -6,4 +6,4 @@ David Kim, Casey Robinson, Glenn Knepp
 
 Alchemaize
 
-v0.1, April 2026 draft. Pre-release. Do not cite as final.
+v0.1, April 29, 2026 draft. Pre-release. Do not cite as final.
