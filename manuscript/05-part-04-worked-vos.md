@@ -4,7 +4,7 @@
 
 To show what a VOS actually looks like, we reproduce one here in abbreviated form. It's a VOS Casey wrote in late February, against the Finaize application, for a feature called Deal Jacket Document Assembly.
 
-The WHY and WHAT are reproduced in full. The HOW, CONTEXT, and OUTCOME are summarized. The full VOS, including the thirty-line Gherkin acceptance contract, is in Appendix B of the book.
+The WHY and WHAT are reproduced in full. The HOW, CONTEXT, and OUTCOME are summarized. Appendix B of the book walks a different VOS end to end (the Trade Journal VOS, Casey's first, on TradeCodex), with annotations on each section and a second worked example showing what an eddy looks like when verification sends a VOS back. The two examples together cover both a clean first-pass shipment and a contract revision, which is the wider range a reader will encounter.
 
 ---
 
